@@ -1,0 +1,40 @@
+export type LanguageKey = "auto" | "en" | "zh";
+
+export interface I18nStrings {
+  pluginName: string;
+  dashboardTitle: string;
+  refresh: string;
+  searchPlaceholder: string;
+  filterAll: string;
+  filterLow: string;
+  filterDue: string;
+  filterUnreviewed: string;
+  summaryNotes: string;
+  summaryAverageMastery: string;
+  summaryDueCards: string;
+  summaryUnreviewed: string;
+  tableNote: string;
+  tableMastery: string;
+  tableCards: string;
+  tableReviewed: string;
+  tableDue: string;
+  tableAverageInterval: string;
+  tableAverageEase: string;
+  tableNextDue: string;
+  emptyState: string;
+  settingsTitle: string;
+  settingsIgnoredPaths: string;
+  settingsIgnoredPathsDesc: string;
+  settingsIgnoredPathsPlaceholder: string;
+  settingsLowMastery: string;
+  settingsLowMasteryDesc: string;
+  settingsLanguage: string;
+  settingsLanguageDesc: string;
+  dependencyTextInstalled: (version: string | null, dataStore: string | null) => string;
+  dependencyTextMissing: string;
+  installNote: string;
+  noticeRefreshFailed: string;
+  noticeFileNotFound: string;
+  commandOpenDashboard: string;
+  commandRefreshIndex: string;
+}

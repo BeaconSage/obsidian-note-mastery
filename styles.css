@@ -1,0 +1,120 @@
+.note-mastery-view {
+  padding: 12px;
+}
+
+.note-mastery-header {
+  align-items: center;
+  display: flex;
+  gap: 8px;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.note-mastery-title {
+  align-items: center;
+  display: flex;
+  flex-direction: row-reverse;
+  gap: 8px;
+  font-size: var(--font-ui-large);
+  font-weight: var(--font-semibold);
+}
+
+.note-mastery-title-icon {
+  color: var(--interactive-accent);
+  display: inline-flex;
+}
+
+.note-mastery-dependency {
+  border: 1px solid var(--background-modifier-border);
+  border-radius: 6px;
+  color: var(--text-muted);
+  font-size: var(--font-ui-smaller);
+  margin-bottom: 12px;
+  padding: 8px;
+}
+
+.note-mastery-dependency.is-warning {
+  border-color: var(--text-warning);
+  color: var(--text-warning);
+}
+
+.note-mastery-summary {
+  display: grid;
+  gap: 8px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin-bottom: 12px;
+}
+
+.note-mastery-summary-card {
+  border: 1px solid var(--background-modifier-border);
+  border-radius: 6px;
+  padding: 8px;
+}
+
+.note-mastery-summary-value {
+  font-size: var(--font-ui-large);
+  font-weight: var(--font-semibold);
+}
+
+.note-mastery-summary-label {
+  color: var(--text-muted);
+  font-size: var(--font-ui-smaller);
+}
+
+.note-mastery-controls {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.note-mastery-search {
+  flex: 1;
+  min-width: 0;
+}
+
+.note-mastery-table-container {
+  overflow-x: auto;
+}
+
+.note-mastery-table {
+  border-collapse: collapse;
+  font-size: var(--font-ui-small);
+  width: 100%;
+}
+
+.note-mastery-table th,
+.note-mastery-table td {
+  border-bottom: 1px solid var(--background-modifier-border);
+  padding: 6px 8px;
+  text-align: left;
+  white-space: nowrap;
+}
+
+.note-mastery-table th button {
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+  color: var(--text-muted);
+  cursor: pointer;
+  font-size: var(--font-ui-smaller);
+  height: auto;
+  padding: 0;
+}
+
+.note-mastery-table tbody tr {
+  cursor: pointer;
+}
+
+.note-mastery-table tbody tr:hover {
+  background: var(--background-modifier-hover);
+}
+
+.note-mastery-empty {
+  color: var(--text-muted);
+  padding: 16px 0;
+  text-align: center;
+}
+
+.note-mastery-settings-textarea {
+  min-width: 280px;
+}

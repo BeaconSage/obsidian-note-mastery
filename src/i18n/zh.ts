@@ -1,0 +1,43 @@
+import type { I18nStrings } from "./types";
+
+const zh: I18nStrings = {
+  pluginName: "掌握度看板",
+  dashboardTitle: "掌握度看板",
+  refresh: "刷新",
+  searchPlaceholder: "搜索笔记...",
+  filterAll: "全部",
+  filterLow: "低掌握度",
+  filterDue: "到期",
+  filterUnreviewed: "未复习",
+  summaryNotes: "文档数",
+  summaryAverageMastery: "平均掌握度",
+  summaryDueCards: "到期卡片",
+  summaryUnreviewed: "未复习",
+  tableNote: "文档",
+  tableMastery: "掌握度",
+  tableCards: "卡片",
+  tableReviewed: "已复习",
+  tableDue: "到期",
+  tableAverageInterval: "平均间隔",
+  tableAverageEase: "平均 ease",
+  tableNextDue: "下次到期",
+  emptyState: "没有匹配的闪卡文档。",
+  settingsTitle: "掌握度看板",
+  settingsIgnoredPaths: "忽略路径",
+  settingsIgnoredPathsDesc: "每行一个 glob。匹配的文档不会出现在掌握度看板里。",
+  settingsIgnoredPathsPlaceholder: "模板/**\n.workbuddy/**",
+  settingsLowMastery: "低掌握度阈值",
+  settingsLowMasteryDesc: "用于“低掌握度”过滤器的百分比阈值。",
+  settingsLanguage: "语言",
+  settingsLanguageDesc: "自动跟随 Obsidian 语言，也可手动固定为中文或英文。",
+  dependencyTextInstalled: (version, dataStore) =>
+    `已检测到 Spaced Repetition${version ? ` v${version}` : ""}${dataStore ? `，dataStore: ${dataStore}` : ""}。`,
+  dependencyTextMissing: "未检测到 Spaced Repetition。现有 SR 注释仍可解析，但不会创建新的复习数据。",
+  installNote: "依赖说明：需要安装并使用 Spaced Repetition 社区插件。Note Mastery 只读取 SR 注释，不负责复习卡片。",
+  noticeRefreshFailed: "掌握度看板：刷新失败。",
+  noticeFileNotFound: "掌握度看板：未找到文件",
+  commandOpenDashboard: "打开掌握度看板",
+  commandRefreshIndex: "刷新掌握度索引"
+};
+
+export default zh;

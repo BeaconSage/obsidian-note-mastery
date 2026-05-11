@@ -1,0 +1,10 @@
+{
+  "id": "note-mastery",
+  "name": "Note Mastery",
+  "version": "0.1.0",
+  "minAppVersion": "1.2.8",
+  "description": "Shows note-level mastery from Obsidian Spaced Repetition card schedules.",
+  "author": "BeaconSage",
+  "authorUrl": "https://github.com/BeaconSage",
+  "isDesktopOnly": false
+}
