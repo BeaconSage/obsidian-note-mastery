@@ -1,8 +1,11 @@
 .note-mastery-view {
-  padding: 12px;
+  box-sizing: border-box;
+  height: 100%;
+  overflow: auto;
+  padding: 12px 12px max(40px, var(--safe-area-inset-bottom));
 }
 
-.note-mastery-header {
+.note-mastery-view .note-mastery-header {
   align-items: center;
   display: flex;
   gap: 8px;
@@ -10,7 +13,7 @@
   margin-bottom: 12px;
 }
 
-.note-mastery-title {
+.note-mastery-view .note-mastery-title {
   align-items: center;
   display: flex;
   flex-direction: row-reverse;
@@ -19,12 +22,12 @@
   font-weight: var(--font-semibold);
 }
 
-.note-mastery-title-icon {
+.note-mastery-view .note-mastery-title-icon {
   color: var(--interactive-accent);
   display: inline-flex;
 }
 
-.note-mastery-dependency {
+.note-mastery-view .note-mastery-dependency {
   border: 1px solid var(--background-modifier-border);
   border-radius: 6px;
   color: var(--text-muted);
@@ -33,64 +36,88 @@
   padding: 8px;
 }
 
-.note-mastery-dependency.is-warning {
+.note-mastery-view .note-mastery-dependency.is-warning {
   border-color: var(--text-warning);
   color: var(--text-warning);
 }
 
-.note-mastery-summary {
+.note-mastery-view .note-mastery-summary {
   display: grid;
   gap: 8px;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   margin-bottom: 12px;
 }
 
-.note-mastery-summary-card {
+.note-mastery-view .note-mastery-summary-card {
   border: 1px solid var(--background-modifier-border);
   border-radius: 6px;
   padding: 8px;
 }
 
-.note-mastery-summary-value {
+.note-mastery-view .note-mastery-summary-value {
   font-size: var(--font-ui-large);
   font-weight: var(--font-semibold);
 }
 
-.note-mastery-summary-label {
+.note-mastery-view .note-mastery-summary-label {
   color: var(--text-muted);
   font-size: var(--font-ui-smaller);
 }
 
-.note-mastery-controls {
+.note-mastery-view .note-mastery-controls {
   display: flex;
   gap: 8px;
   margin-bottom: 12px;
 }
 
-.note-mastery-search {
+.note-mastery-view .note-mastery-search {
   flex: 1;
   min-width: 0;
 }
 
-.note-mastery-table-container {
+.note-mastery-view .note-mastery-table-container {
   overflow-x: auto;
 }
 
-.note-mastery-table {
+.note-mastery-view .note-mastery-table {
   border-collapse: collapse;
   font-size: var(--font-ui-small);
+  table-layout: fixed;
+  min-width: 760px;
   width: 100%;
 }
 
-.note-mastery-table th,
-.note-mastery-table td {
+.note-mastery-view .note-mastery-col-path {
+  width: 34%;
+}
+
+.note-mastery-view .note-mastery-col-mastery,
+.note-mastery-view .note-mastery-col-totalCards,
+.note-mastery-view .note-mastery-col-reviewed,
+.note-mastery-view .note-mastery-col-dueCards {
+  width: 8ch;
+}
+
+.note-mastery-view .note-mastery-col-averageInterval,
+.note-mastery-view .note-mastery-col-averageEase {
+  width: 9ch;
+}
+
+.note-mastery-view .note-mastery-col-nextDueDate {
+  width: 12ch;
+}
+
+.note-mastery-view .note-mastery-table th,
+.note-mastery-view .note-mastery-table td {
   border-bottom: 1px solid var(--background-modifier-border);
+  overflow: hidden;
   padding: 6px 8px;
   text-align: left;
+  text-overflow: ellipsis;
   white-space: nowrap;
 }
 
-.note-mastery-table th button {
+.note-mastery-view .note-mastery-table th button {
   background: transparent;
   border: 0;
   box-shadow: none;
@@ -98,18 +125,22 @@
   cursor: pointer;
   font-size: var(--font-ui-smaller);
   height: auto;
+  max-width: 100%;
+  overflow: hidden;
   padding: 0;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
-.note-mastery-table tbody tr {
+.note-mastery-view .note-mastery-table tbody tr {
   cursor: pointer;
 }
 
-.note-mastery-table tbody tr:hover {
+.note-mastery-view .note-mastery-table tbody tr:hover {
   background: var(--background-modifier-hover);
 }
 
-.note-mastery-empty {
+.note-mastery-view .note-mastery-empty {
   color: var(--text-muted);
   padding: 16px 0;
   text-align: center;

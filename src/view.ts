@@ -154,6 +154,11 @@ export class NoteMasteryView extends ItemView {
     }
 
     const table = this.tableContainer.createEl("table", { cls: "note-mastery-table" });
+    const colgroup = table.createEl("colgroup");
+    for (const column of this.columns(strings)) {
+      colgroup.createEl("col", { cls: `note-mastery-col-${column.key}` });
+    }
+
     const thead = table.createEl("thead");
     const headerRow = thead.createEl("tr");
     for (const column of this.columns(strings)) {
