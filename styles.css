@@ -118,3 +118,11 @@
 .note-mastery-settings-textarea {
   min-width: 280px;
 }
+
+.note-mastery-status {
+  cursor: pointer;
+}
+
+.note-mastery-status:hover {
+  color: var(--text-accent);
+}

@@ -42,6 +42,24 @@ export class NoteMasteryIndexer {
     return stats.sort((left, right) => left.mastery - right.mastery || left.path.localeCompare(right.path));
   }
 
+  async getNoteMastery(path: string): Promise<NoteMasteryStats | null> {
+    if (matchesAnyGlob(path, this.settings.ignoredGlobs)) {
+      return null;
+    }
+
+    const abstractFile = this.app.vault.getAbstractFileByPath(path);
+    if (!(abstractFile instanceof TFile)) {
+      return null;
+    }
+
+    const parsed = parseFlashcardDocument(await this.app.vault.cachedRead(abstractFile));
+    if (!parsed.hasFlashcardTag && parsed.schedules.length === 0) {
+      return null;
+    }
+
+    return calculateNoteMastery(abstractFile.path, abstractFile.basename, parsed, toDateKey(new Date()));
+  }
+
   async openNote(path: string): Promise<void> {
     const abstractFile = this.app.vault.getAbstractFileByPath(path);
     if (!(abstractFile instanceof TFile)) {

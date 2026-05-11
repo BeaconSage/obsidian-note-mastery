@@ -13,6 +13,9 @@ export class NoteMasterySettingTab extends PluginSettingTab {
     containerEl.empty();
     containerEl.createEl("h2", { text: strings.settingsTitle });
 
+    const dependency = containerEl.createDiv({ cls: "note-mastery-settings-dependency" });
+    dependency.setText(strings.installNote);
+
     new Setting(containerEl)
       .setName(strings.settingsIgnoredPaths)
       .setDesc(strings.settingsIgnoredPathsDesc)
@@ -61,7 +64,16 @@ export class NoteMasterySettingTab extends PluginSettingTab {
           });
       });
 
-    const dependency = containerEl.createDiv({ cls: "note-mastery-settings-dependency" });
-    dependency.setText(strings.installNote);
+    new Setting(containerEl)
+      .setName(strings.settingsShowCurrentNoteStatusBar)
+      .setDesc(strings.settingsShowCurrentNoteStatusBarDesc)
+      .addToggle((toggle) => {
+        toggle
+          .setValue(this.plugin.settings.showCurrentNoteStatusBar)
+          .onChange(async (value) => {
+            this.plugin.settings.showCurrentNoteStatusBar = value;
+            await this.plugin.saveSettings();
+          });
+      });
   }
 }

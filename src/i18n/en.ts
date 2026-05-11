@@ -30,6 +30,8 @@ const en: I18nStrings = {
   settingsLowMasteryDesc: "Percentage used by the Low mastery filter.",
   settingsLanguage: "Language",
   settingsLanguageDesc: "Auto follows Obsidian's language. You can also force English or Chinese.",
+  settingsShowCurrentNoteStatusBar: "Show current note mastery in status bar",
+  settingsShowCurrentNoteStatusBarDesc: "Display the current note's mastery percentage in the status bar.",
   dependencyTextInstalled: (version, dataStore) =>
     `Spaced Repetition detected${version ? ` v${version}` : ""}${dataStore ? `, dataStore: ${dataStore}` : ""}.`,
   dependencyTextMissing: "Spaced Repetition not detected. Existing SR comments can still be parsed, but no new review data will be created.",
@@ -37,7 +39,11 @@ const en: I18nStrings = {
   noticeRefreshFailed: "Note Mastery: failed to refresh stats.",
   noticeFileNotFound: "Note Mastery: file not found",
   commandOpenDashboard: "Open Note Mastery dashboard",
-  commandRefreshIndex: "Refresh Note Mastery index"
+  commandRefreshIndex: "Refresh Note Mastery index",
+  commandShowCurrentNoteMastery: "Show current note mastery",
+  currentNoteLabel: "Current note",
+  currentNoteNoActive: "No active note",
+  currentNoteNoMastery: "No flashcards in the current note"
 };
 
 export default en;

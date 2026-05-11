@@ -1,4 +1,6 @@
 import { describe, expect, it } from "vitest";
+import { DEFAULT_SETTINGS } from "../src/constants";
+import { parseFlashcardDocument } from "../src/parser";
 import { calculateCardMastery, calculateNoteMastery } from "../src/mastery";
 import type { ParsedFlashcardDocument } from "../src/types";
 
@@ -49,5 +51,17 @@ describe("calculateNoteMastery", () => {
     const stats = calculateNoteMastery("A.md", "A", parsed, "2026-05-11");
     expect(stats.totalCards).toBe(2);
     expect(stats.reviewedCards).toBe(2);
+  });
+
+  it("derives mastery from a parsed flashcard document", () => {
+    const parsed = parseFlashcardDocument("#flashcards/demo\nQ::A\n<!--SR:!2026-05-20,3,250-->");
+    const stats = calculateNoteMastery("Demo.md", "Demo", parsed, "2026-05-11");
+    expect(stats.basename).toBe("Demo");
+    expect(stats.reviewedCards).toBe(1);
+    expect(stats.mastery).toBeGreaterThan(0);
+  });
+
+  it("keeps current note status bar enabled by default", () => {
+    expect(DEFAULT_SETTINGS.showCurrentNoteStatusBar).toBe(true);
   });
 });

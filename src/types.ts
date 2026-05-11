@@ -2,6 +2,7 @@ export interface NoteMasterySettings {
   ignoredGlobs: string[];
   lowMasteryThreshold: number;
   language: "auto" | "en" | "zh";
+  showCurrentNoteStatusBar: boolean;
 }
 
 export interface SrSchedule {

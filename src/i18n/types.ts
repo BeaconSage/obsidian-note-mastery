@@ -30,6 +30,8 @@ export interface I18nStrings {
   settingsLowMasteryDesc: string;
   settingsLanguage: string;
   settingsLanguageDesc: string;
+  settingsShowCurrentNoteStatusBar: string;
+  settingsShowCurrentNoteStatusBarDesc: string;
   dependencyTextInstalled: (version: string | null, dataStore: string | null) => string;
   dependencyTextMissing: string;
   installNote: string;
@@ -37,4 +39,8 @@ export interface I18nStrings {
   noticeFileNotFound: string;
   commandOpenDashboard: string;
   commandRefreshIndex: string;
+  commandShowCurrentNoteMastery: string;
+  currentNoteLabel: string;
+  currentNoteNoActive: string;
+  currentNoteNoMastery: string;
 }

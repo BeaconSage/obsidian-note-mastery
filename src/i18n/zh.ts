@@ -30,6 +30,8 @@ const zh: I18nStrings = {
   settingsLowMasteryDesc: "用于“低掌握度”过滤器的百分比阈值。",
   settingsLanguage: "语言",
   settingsLanguageDesc: "自动跟随 Obsidian 语言，也可手动固定为中文或英文。",
+  settingsShowCurrentNoteStatusBar: "在状态栏显示当前文档掌握度",
+  settingsShowCurrentNoteStatusBarDesc: "在状态栏显示当前活动文档的掌握度百分比。",
   dependencyTextInstalled: (version, dataStore) =>
     `已检测到 Spaced Repetition${version ? ` v${version}` : ""}${dataStore ? `，dataStore: ${dataStore}` : ""}。`,
   dependencyTextMissing: "未检测到 Spaced Repetition。现有 SR 注释仍可解析，但不会创建新的复习数据。",
@@ -37,7 +39,11 @@ const zh: I18nStrings = {
   noticeRefreshFailed: "掌握度看板：刷新失败。",
   noticeFileNotFound: "掌握度看板：未找到文件",
   commandOpenDashboard: "打开掌握度看板",
-  commandRefreshIndex: "刷新掌握度索引"
+  commandRefreshIndex: "刷新掌握度索引",
+  commandShowCurrentNoteMastery: "查看当前文档掌握度",
+  currentNoteLabel: "当前文档",
+  currentNoteNoActive: "没有活动文档",
+  currentNoteNoMastery: "当前文档没有闪卡"
 };
 
 export default zh;

@@ -7,5 +7,6 @@ export const SPACED_REPETITION_PLUGIN_ID = "obsidian-spaced-repetition";
 export const DEFAULT_SETTINGS: NoteMasterySettings = {
   ignoredGlobs: ["模板/**", ".workbuddy/**"],
   lowMasteryThreshold: 60,
-  language: "auto"
+  language: "auto",
+  showCurrentNoteStatusBar: true
 };
