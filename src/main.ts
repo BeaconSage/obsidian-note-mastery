@@ -28,7 +28,7 @@ export default class NoteMasteryPlugin extends Plugin {
     });
 
     this.addCommand({
-      id: "open-note-mastery",
+      id: "open-dashboard",
       name: strings.commandOpenDashboard,
       callback: () => {
         void this.activateView();
@@ -36,7 +36,7 @@ export default class NoteMasteryPlugin extends Plugin {
     });
 
     this.addCommand({
-      id: "refresh-note-mastery",
+      id: "refresh-index",
       name: strings.commandRefreshIndex,
       callback: async () => {
         await this.refreshStats();
@@ -44,7 +44,7 @@ export default class NoteMasteryPlugin extends Plugin {
     });
 
     this.addCommand({
-      id: "show-current-note-mastery",
+      id: "show-current-note",
       name: strings.commandShowCurrentNoteMastery,
       callback: async () => {
         await this.updateCurrentNoteMastery();
@@ -82,10 +82,6 @@ export default class NoteMasteryPlugin extends Plugin {
     void this.updateCurrentNoteMastery();
   }
 
-  onunload(): void {
-    this.app.workspace.detachLeavesOfType(VIEW_TYPE_NOTE_MASTERY);
-  }
-
   async activateView(): Promise<void> {
     const leaves = this.app.workspace.getLeavesOfType(VIEW_TYPE_NOTE_MASTERY);
     let leaf: WorkspaceLeaf | null = leaves[0] ?? null;
@@ -96,7 +92,7 @@ export default class NoteMasteryPlugin extends Plugin {
     }
 
     if (leaf) {
-      this.app.workspace.revealLeaf(leaf);
+      void this.app.workspace.revealLeaf(leaf);
     }
   }
 

@@ -1,6 +1,6 @@
 {
   "name": "obsidian-note-mastery",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Shows note-level mastery from Spaced Repetition card schedules.",
   "main": "main.js",
   "type": "module",
@@ -10,8 +10,7 @@
     "test": "vitest run",
     "lint": "eslint .",
     "install:dev-vault": "node scripts/install-plugin.mjs /Users/tella/Development/note-mastery-dev-vault",
-    "install:vault": "node scripts/install-plugin.mjs /Users/tella/wiki",
-    "version": "node version-bump.mjs && git add manifest.json versions.json"
+    "install:vault": "node scripts/install-plugin.mjs /Users/tella/wiki"
   },
   "keywords": [
     "obsidian",

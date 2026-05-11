@@ -25,6 +25,6 @@ describe("getStrings", () => {
   });
 
   it("returns English strings when forced", () => {
-    expect(getStrings({} as never, "en").dashboardTitle).toBe("Note Mastery");
+    expect(getStrings({} as never, "en").dashboardTitle).toBe("Note mastery");
   });
 });

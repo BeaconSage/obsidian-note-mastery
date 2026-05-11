@@ -11,7 +11,7 @@ export class NoteMasterySettingTab extends PluginSettingTab {
     const strings = getStrings(this.app, this.plugin.settings.language);
     const { containerEl } = this;
     containerEl.empty();
-    containerEl.createEl("h2", { text: strings.settingsTitle });
+    new Setting(containerEl).setName(strings.settingsTitle).setHeading();
 
     const dependency = containerEl.createDiv({ cls: "note-mastery-settings-dependency" });
     dependency.setText(strings.installNote);
