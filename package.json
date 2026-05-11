@@ -1,7 +1,7 @@
 {
   "name": "obsidian-note-mastery",
   "version": "0.1.0",
-  "description": "Shows note-level mastery from Obsidian Spaced Repetition card schedules.",
+  "description": "Shows note-level mastery from Spaced Repetition card schedules.",
   "main": "main.js",
   "type": "module",
   "scripts": {
